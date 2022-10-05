@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/styles/mainStyle.css">
+    <link rel="stylesheet" href="../../assets/styles/donateStyle.css">
+    <title>Online zoo</title>
+</head>
+<body>
+<div id="container">
+    <header class="header">
+        <div class="header-container">
+            <a href="../main/index.html" class="logo">
+                <img src="../../assets/images/logo_header.png" alt="Logo" class="logo-desktop">
+                <img src="../../assets/images/logo_header_mobile.png" alt="Logo" class="logo-mobile">
+            </a>
+            <button class="menu-button button-open" onclick="toggleMenu()">
+                <img src="../../assets/icons/menu.svg" alt="Logo">
+            </button>
+            <div id="js-navigation" class="nav-container">
+                <a href="../main/index.html" class="burger-logo">
+                    <span class="burger-title">PetStory online</span>
+                </a>
+                <button class="menu-button button-close" onclick="toggleMenu()">
+                    <img src="../../assets/icons/x_icon.svg" alt="Close">
+                </button>
+                <nav id="header-nav" class="header-nav">
+                    <ul class="header-nav-li">
+                        <li><a href="../main/index.html">About</a></li>
+                        <li><a href="">Map</a></li>
+                        <li><a href="">Zoos</a></li>
+                        <li><a href="../donate/index.html" class="active">Donate</a></li>
+                        <li><a href="">Contact us</a></li>
+                    </ul>
+                </nav>
+                <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online" class="designed-by">
+                    Designed by &#169
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="main-fragment">
+        <div class="panda-inner"></div>
+        <section class="pick donate-page">
+            <div class="container-text">
+                <h2>THE ZOO HAS OFFICIALLY REOPENED BUT WE STILL NEED YOUR HELP!</h2>
+                <p>Even though the Zoo has been able to reopen, we are at a greatly reduced capacity with educational
+                    programs and public and private events cancelled or postponed for additional months. We need you now
+                    more than ever to help ensure that we overcome these challenges. We have been actively raising funds
+                    in the community, and we are grateful for the generosity. But much more support is still needed, and
+                    we need your help! Please consider a gift today – no matter what size – to help us sustain our
+                    mission.</p>
+                <h3>Donation Information</h3>
+            </div>
+            <div class="pick-section-container">
+                <div class="pick-text-block">
+                    <h2>Pick and feed a friend</h2>
+                    <h3>We know the animals bring you joy, and in these extraordinary times, we’re glad.</h3>
+                </div>
+                <div class="donate-animal">
+                    <div class="donate-animal-holder">
+                        <div class="donate-animal_count">
+                            <span class="amount">4</span>
+                            <span class="amount-decs">Banner diet for the day.</span>
+                        </div>
+                        <div class="donate-animal_multiply"><img src="../../assets/icons/x_icon.svg" alt=""></div>
+                        <div class="donate-animal_ico"><img src="../../assets/images/animals-widget.png"
+                                                            alt="Banner ico"></div>
+                    </div>
+                </div>
+                <div class="donate-amount-range">
+                    <p class="title">Amount</p>
+                    <div class="donate-amount_line">
+                        <label for="5000"><input type="radio" id="5000" name="amount" value="5000">$5000 </label>
+                        <label for="2000"><input type="radio" id="2000" name="amount" value="2000">$2000 </label>
+                        <label for="1000"><input type="radio" id="1000" name="amount" value="1000" checked>$1000
+                        </label>
+                        <label for="500"><input type="radio" id="500" name="amount" value="500">$500 </label>
+                        <label for="250"><input type="radio" id="250" name="amount" value="250">$250 </label>
+                        <label for="100"><input type="radio" id="100" name="amount" value="100">$100 </label>
+                        <label for="50"><input type="radio" id="50" name="amount" value="50">$50 </label>
+                        <label for="25"><input type="radio" id="25" name="amount" value="25">$25 </label>
+                    </div>
+                </div>
+                <form action="" class="donate-form">
+                    <div class="input-holder">
+                        <input type="number" pattern="/^-?\d+\.?\d*$/"
+                               onKeyPress="if(this.value.length==4) return false;" name="" id="currency"
+                               placeholder="Another amount">
+                        <label for="currency" class="currency">$</label>
+                    </div>
+                    <div class="form-row">
+                        <label for="Monthly"><input type="radio" name="donation-period" id="Monthly" value="Monthly">Monthly</label>
+                        <label for="Once"> <input type="radio" name="donation-period" id="Once" value="Once"
+                                                  checked="checked">Once</label>
+                    </div>
+                    <input type="submit" value="Feed a friend now">
+                </form>
+                <p class="centre-text">Share with your friends on social networks </p>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-container-logo">
+                <a href="../main/index.html">
+                    <img class='logo-footer-desktop' src="../../assets/images/logo.png" alt="logo zoo">
+                    <img class='logo-footer-mobile' src="../../assets/images/logo-footer-mobile.png" alt="logo zoo">
+                </a>
+            </div>
+            <div class="subscription-form">
+                <h3>Subscribe to our news</h3>
+                <form action="">
+                    <input type="email" name="" id="email" placeholder="Enter your email">
+                    <input type="submit" value="Submit"/>
+                </form>
+            </div>
+            <div class="button-container">
+                <a href="../donate/index.html" class="button rectangle">donate for volunteers</a>
+            </div>
+            <ul class="social-links">
+                <li><a href="https://www.facebook.com/"><span class="ico-social"><img
+                        src="../../assets/icons/ico-facebook.svg"
+                        alt="Facebook ico"></span><span class="ico-social_text">Facebook</span></a></li>
+                <li><a href="https://twitter.com/"><span class="ico-social"><img
+                        src="../../assets/icons/ico-twitter.svg" alt="Twitter ico"></span><span class="ico-social_text">Twitter</span></a>
+                </li>
+                <li><a href="https://www.instagram.com/"><span class="ico-social"><img
+                        src="../../assets/icons/ico-instagram.svg"
+                        alt="Instagram ico"></span><span class="ico-social_text">Instagram</span></a></li>
+                <li><a href="https://www.youtube.com/"><span class="ico-social"><img
+                        src="../../assets/icons/ico-youtube.svg" alt="YouTube ico"></span><span class="ico-social_text">YouTube</span></a>
+                </li>
+            </ul>
+            <div class="footer-navigation-container">
+                <nav class="footer-navigation">
+                    <ul>
+                        <li><a href="../main/index.html">About</a></li>
+                        <li><a href="">Map</a></li>
+                        <li><a href="">Zoos</a></li>
+                        <li><a href="">Contact us</a></li>
+                    </ul>
+                </nav>
+                <div class="designed">
+                    <a href="https://www.figma.com/file/jfEFwkXVj1WRq7sUHDr8os/PetStory-online">
+                        <p> Designed by Alisa Samborskaya</p>
+                        <p>&#169;RSSchool & &#169;Yem Digital 2021</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+<script>
+    function toggleMenu() {
+        var x = document.getElementById("js-navigation");
+        if (x.style.display === "block") {
+            x.style.display = "none";
+        } else {
+            x.style.display = "block";
+        }
+    }
+</script>
+</html>
