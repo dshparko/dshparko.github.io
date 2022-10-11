@@ -546,17 +546,18 @@ li {
 }
 
 .third-fragment-carousel .slide {
+    background: linear-gradient(#F1F3F2 0 0) padding-box,
+    linear-gradient(-70deg, #FEBDAB 74%, #F3A9F8 66%, #E0D8F0 100%, #EAF7FE 100%, #EAF7FE 100%) border-box;
     font-weight: 300;
     font-size: 15px;
     line-height: 120%;
     color: #767474;
     padding: 14px 14px 20px;
-    background: #F5F7F6;
     border-radius: 20px;
     max-height: 391px;
     position: relative;
-    background-clip: padding-box;
     border: solid 2px transparent;
+    transition: all 500ms linear;
 }
 
 .slide-container {
@@ -769,6 +770,14 @@ footer a {
     width: 130px;
     height: 44px;
     cursor: pointer;
+}
+.popup-button-close {
+    cursor: pointer;
+    color: #FBC7AC;
+    position: absolute;
+    right: -26px;
+    top: -11px;
+    font-size: 20px;
 }
 
 .subscription-form input[type="submit"]:focus {
@@ -1111,6 +1120,44 @@ footer a {
 
     .button-container {
         padding: 31px 0 65px;
+    }
+    .popup-modal {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 267px;
+    }
+
+    .popup-modal .content {
+        font-weight: 300;
+        font-size: 15px;
+        line-height: 120%;
+        color: #767474;
+        padding: 14px 14px 20px;
+        background: #F5F7F6;
+        border-radius: 20px;
+        position: relative;
+        background-clip: padding-box;
+        border: solid 2px transparent;
+    }
+    .popup-modal .slide-feedback {
+        line-clamp: 9999999;
+        -webkit-line-clamp: 9999999;
+    }
+
+    .popup-modal .content:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: -1;
+        margin: -2px;
+        border-radius: inherit;
+        background: linear-gradient(315.75deg, #FEBDAB 74%, #F3A9F8 66%, #E0D8F0 100%, #E0D8F0 100%, #E0D8F0 100%), linear-gradient(315.75deg, #FEBDAB 74%, #F3A9F8 66%, #E0D8F0 100%, #E0D8F0 100%, #E0D8F0 100%);
     }
 
 }
@@ -1471,7 +1518,10 @@ footer a {
     .slide-container {
         width: 100%;
     }
-
+    img {
+        border-style: none;
+        height: auto;
+    }
     .third-fragment-carousel .slide {
         display: none;
         padding: 14px 11px 8px;
@@ -1531,7 +1581,7 @@ footer a {
     .how-works-step {
         min-height: 212px;
     }
-
+    
     .how-works-steps {
         flex-direction: column;
         align-items: center;
