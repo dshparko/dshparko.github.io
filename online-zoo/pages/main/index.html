@@ -854,9 +854,10 @@
 
     rerender()
 
+   
     function renderAnimals(element, index, arr) {
         var html = `
-            <div class="pets-card">
+            <div class="animals-card">
                 <a href="index.html" class="slider-image">
                     <div class="image-holder"><img src="https://dshparko.github.io/online-zoo/pages/main/${element.imgUrl}"
                                                    alt=${element.animalName}>
@@ -869,15 +870,11 @@
                         })}
                              class="ico-animal">
                     </div>
-                    <div class="overlay">
-                        <h3>${element.animalName}</h3>
-                        <p>${element.animalHabitat}</p>
-                    </div>
                 </a>
             </div>
         `
         return html;
-    }
+        }
 
 </script>
 <script>
