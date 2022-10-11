@@ -75,15 +75,15 @@
                 <div class="donate-amount-range">
                     <p class="title">Amount</p>
                     <div class="donate-amount_line">
-                        <label for="5000"><input type="radio" id="5000" name="amount" value="5000">$5000 </label>
-                        <label for="2000"><input type="radio" id="2000" name="amount" value="2000">$2000 </label>
-                        <label for="1000"><input type="radio" id="1000" name="amount" value="1000" checked>$1000
+                        <label for="5000" onclick="selectDonate(this)"><input type="radio" id="5000" name="amount" value="5000">$5000 </label>
+                        <label for="2000" onclick="selectDonate(this)"><input type="radio" id="2000" name="amount" value="2000">$2000 </label>
+                        <label for="1000" onclick="selectDonate(this)"><input type="radio" id="1000" name="amount" value="1000" checked>$1000
                         </label>
-                        <label for="500"><input type="radio" id="500" name="amount" value="500">$500 </label>
-                        <label for="250"><input type="radio" id="250" name="amount" value="250">$250 </label>
-                        <label for="100"><input type="radio" id="100" name="amount" value="100">$100 </label>
-                        <label for="50"><input type="radio" id="50" name="amount" value="50">$50 </label>
-                        <label for="25"><input type="radio" id="25" name="amount" value="25">$25 </label>
+                        <label for="500" onclick="selectDonate(this)"><input type="radio" id="500" name="amount" value="500">$500 </label>
+                        <label for="250" onclick="selectDonate(this)"><input type="radio" id="250" name="amount" value="250">$250 </label>
+                        <label for="100" onclick="selectDonate(this)"><input type="radio" id="100" name="amount" value="100">$100 </label>
+                        <label for="50" onclick="selectDonate(this)"><input type="radio" id="50" name="amount" value="50">$50 </label>
+                        <label for="25" onclick="selectDonate(this)"><input type="radio" id="25" name="amount" value="25">$25 </label>
                     </div>
                 </div>
                 <form action="" class="donate-form">
@@ -157,6 +157,20 @@
 </div>
 </body>
 <script>
+
+    var amountInput = document.getElementById("currency")
+
+    const donateAmounts = ['25', '50', '100', '250', '500', '1000', '2000', '5000'];
+    function validateCheckedSelects(x) {
+        if (x.matches) {
+            document.querySelector(".js-checked").checked = true;
+        }
+    }
+
+    var x = window.matchMedia("(max-width: 999px)")
+    validateCheckedSelects(x)
+    x.addListener(validateCheckedSelects)
+
     function toggleMenu() {
         var x = document.getElementById("js-navigation");
         if (x.style.display === "block") {
@@ -165,5 +179,35 @@
             x.style.display = "block";
         }
     }
+
+    function checkDonateAmount() {
+        let inputAmount = amountInput.value;
+        if(inputAmount > 0 && donateAmounts.includes(inputAmount)) {
+            let newElement = document.getElementById(amountInput.value);
+            newElement.classList.add("js-checked")
+            newElement.checked = true
+        } else {
+            let checkedInput = document.querySelector('.donate-amount_line input:checked');
+            if(checkedInput != null) {
+                checkedInput.checked = false
+                checkedInput.classList.remove("js-checked");
+            }
+        }
+    }
+
+    function selectDonate(el) {
+        let donateAmount = (el).querySelector('input').value;
+        console.log(donateAmount)
+        amountInput.value = donateAmount
+    }
+
+    document.addEventListener('click', (e) => {
+        if (e.target.closest('.nav-wrapper')) {
+            document.getElementById("js-navigation").style.display = "none";
+        }
+    });
+
+    // amountInput.addEventListener('keypress', checkDonateAmount)
+    amountInput.addEventListener('input', checkDonateAmount);
 </script>
 </html>
